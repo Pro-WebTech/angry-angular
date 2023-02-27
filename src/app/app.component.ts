@@ -5,6 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  name = 'my-first-angry-angular';
+export class AppComponent { 
 }
