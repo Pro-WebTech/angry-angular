@@ -10,11 +10,30 @@
     [(ngModel)]="serverName">
 <hr>
 <!-- <p>{{serverName}}</p> -->
-
+<app-server></app-server>
 <button 
     class="btn btn-primary" 
     [disabled] = "!allowNewServer"
     (click)="onCreateServer()">Add Server</button>
-<p>{{serverCreationStatus}}</p>
+
+<p *ngIf="serverCreated; else noServer">Server was created, Name is {{serverName}} </p>
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
+
+<app-server *ngFor="let server of servers"></app-server>
+
+<!-- <p>{{serverCreationStatus}}</p>
 <p [innerText]="allowNewServer" >
-</p>
+</p> -->
+
+
+<hr>
+
+<!-- <button class="btn btn-primary" (click)="showMe = !showMe" >Show me</button> -->
+<button class="btn btn-primary" (click)="onToggleDetails()" >Show me</button>
+<p *ngIf = "showSecret">Now I am here</p>
+<div *ngFor="let logItem of log; let i = index"
+    [ngStyle]="{backgroundColor: i >=5 ? 'blue': 'transparent'}"
+    [ngClass] = "{'white-text' : i >= 5}"
+> {{logItem}} </div>

@@ -3,14 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-success-alert',
   templateUrl: './success-alert.component.html',
-  styles: [`
-   p {
-        padding: 20px;
-        background-color: palegreen;
-        border: 1px solid green;
-   }
-  `]
+  styleUrls: ['./success-alert.component.css']
 })
-export class SuccessAlertComponent {
 
+export class SuccessAlertComponent {
+  username = 'Myname';
+
+  resetUser() {
+    this.username = ""
+  }
 }
