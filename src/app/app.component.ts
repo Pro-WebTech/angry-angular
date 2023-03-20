@@ -11,4 +11,9 @@ import { Component } from '@angular/core';
   `]
 })
 export class AppComponent { 
+  loadedFeature = true;
+
+  onNavigate(feature: string) {
+
+  }
 }
